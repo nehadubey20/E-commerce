@@ -10,5 +10,6 @@ package e.commerce;
  * @author NEHA
  */
 public class Login {
+    public static void login(){}
     
 }

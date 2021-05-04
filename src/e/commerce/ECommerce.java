@@ -20,26 +20,24 @@ public class ECommerce {
         // TODO code application logic here
         
 	int ch;
-
+        Login login = new Login();
         Scanner sc=new Scanner(System.in);
-	System.out.println("....Employee Details....");
+	System.out.println("....Welcome to MART....");
 				
 	while(true)
 	{
-        	System.out.println("1. New Employee");
-		System.out.println("2. Show All Employee");
-		System.out.println("3. Update Employee");
-		System.out.println("4. Delete Employee");
-		System.out.println("5. Exit");
-
+        	System.out.println("1. Login");
+		System.out.println("2. New user?? Register");
+		System.out.println("3. Browse");
+		System.out.println("4. Exit");
+		
 		ch=sc.nextInt();
 		switch(ch)
 		{
-                	case 1:  ; break;
-			case 2:  ; break;
-			case 3: ; break;
-			case 4: ; break;
-			case 5: System.exit(0) ;
+                	case 1: Login.login(); break;
+			case 2: Register.register() ; break;
+			case 3:  ; break;
+			case 4: System.exit(0) ;
 			default: System.out.println("Enter a valid choice!");		
 		}
 						

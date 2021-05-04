@@ -11,5 +11,7 @@ package e.commerce;
  */
 public class Register {
     
-    
+    public static void register()
+    {
+    }
 }
