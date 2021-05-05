@@ -19,7 +19,7 @@ public class ECommerce {
     public static void main(String[] args) {
         // TODO code application logic here
         
-	int ch;
+	int choice;
         Login login = new Login();
         Scanner sc=new Scanner(System.in);
 	System.out.println("....Welcome to MART....");
@@ -31,12 +31,12 @@ public class ECommerce {
 		System.out.println("3. Browse");
 		System.out.println("4. Exit");
 		
-		ch=sc.nextInt();
-		switch(ch)
+		choice=sc.nextInt();
+		switch(choice)
 		{
                 	case 1: Login.login(); break;
 			case 2: Register.register() ; break;
-			case 3:  ; break;
+			case 3: ; break;
 			case 4: System.exit(0) ;
 			default: System.out.println("Enter a valid choice!");		
 		}
