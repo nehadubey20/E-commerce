@@ -29,7 +29,7 @@ public class ECommerce {
         	System.out.println("1. Login");
 		System.out.println("2. New user?? Register");
 		System.out.println("3. Browse");
-		System.out.println("4. Exit");
+		System.out.println("4. Quit");
 		
 		choice=sc.nextInt();
 		switch(choice)
