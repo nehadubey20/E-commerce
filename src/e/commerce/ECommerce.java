@@ -18,7 +18,6 @@ public class ECommerce {
      */
     public static void main(String[] args) {
         int browse;
-        
 	int choice;
         Login login = new Login();
         Scanner sc=new Scanner(System.in);
