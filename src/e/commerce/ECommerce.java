@@ -17,7 +17,7 @@ public class ECommerce {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        int browse;
         
 	int choice;
         Login login = new Login();
