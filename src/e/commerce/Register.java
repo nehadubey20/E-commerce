@@ -5,6 +5,11 @@
  */
 package e.commerce;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+import java.util.Scanner;
+
 /**
  *
  * @author NEHA
@@ -12,6 +17,44 @@ package e.commerce;
 public class Register {
     
     public static void register()
-    {
-    }
+	{
+		Connection con=DBConnector.getConnection();
+		//System.out.println(con);
+		Scanner sc1= new Scanner(System.in);
+		Scanner sc2=new Scanner(System.in);
+		String username,email,password,contact;
+
+		int userId;
+		try
+		{
+			String query = "insert into users(username,email,password,contact) values (?,?,?,?)";
+			System.out.println("Enter User Name:");
+			username=sc2.nextLine();
+			System.out.println("Enter Email ID:");
+			email=sc2.nextLine();
+			System.out.println("Enter Password:");
+			password=sc1.nextLine();
+			System.out.println("Enter Contact:");
+			contact=sc2.nextLine();	
+			
+//			if(isEmailExist(email)==false && isPhoneExist(phone)==false)
+//			{			
+//			
+                        PreparedStatement stmt = con.prepareStatement(query);
+			stmt.setString(1,username);
+			stmt.setString(2,email);
+			stmt.setString(3,password);
+			stmt.setString(4,contact);
+			stmt.executeUpdate();
+			System.out.println("User Registered Successfully");
+			//}
+
+			//con.close();
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
 }

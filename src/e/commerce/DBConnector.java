@@ -28,7 +28,7 @@ public class DBConnector {
         	Class.forName("com.mysql.jdbc.Driver");
 		conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce","root","");
 		System.out.println(conn);
-                conn.close();
+                //conn.close();
             }
             catch(Exception e)
             {
@@ -37,9 +37,10 @@ public class DBConnector {
           }
         return conn;
 	}
-        public static void main(String[] args) {
-	Connection con=DBConnector.getConnection();
-
-    }
+//        public static void main(String[] args) {
+//	Connection con=DBConnector.getConnection();
+//
+//    }
 }
+
 
