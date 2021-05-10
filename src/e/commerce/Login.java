@@ -14,9 +14,11 @@ import java.util.Scanner;
  *
  * @author NEHA
  */
-public class Login {
+public class Login extends User{
+    
     public static void login()
     {
+        User user=new User();
         Connection con=DBConnector.getConnection();
 	Scanner sc= new Scanner(System.in);
 	String email,password;
@@ -30,8 +32,10 @@ public class Login {
 	try
         {
             String query = "select * from users(email,password)";
+            
             if(isEmailExist(email)==true && isPwdExist(password)==true)
-            {			
+            {
+               
   		System.out.println("User Login Successfully");
             }
             else
