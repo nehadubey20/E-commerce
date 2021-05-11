@@ -32,10 +32,8 @@ public class Login extends User{
 	try
         {
             String query = "select * from users(email,password)";
-            
             if(isEmailExist(email)==true && isPwdExist(password)==true)
             {
-               
   		System.out.println("User Login Successfully");
             }
             else
@@ -48,15 +46,11 @@ public class Login extends User{
 			System.out.println(e);
 		}
 	}
-
-
 	public static boolean isEmailExist(String email)
 	{
 		boolean email_exist=false;
 		Connection con=DBConnector.getConnection();
-
 		String query="Select email from users where email=?";
-
 		try
 		{
 			PreparedStatement stmt =con.prepareStatement(query);
@@ -78,9 +72,8 @@ public class Login extends User{
 		{
 			System.out.println(e);
 		}
-		//System.out.println(user_id_exist);
+		System.out.println(email_exist);
 		return email_exist;
-
 	}
         
     	public static boolean isPwdExist(String password)
