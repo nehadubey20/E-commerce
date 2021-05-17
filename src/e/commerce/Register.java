@@ -27,7 +27,7 @@ public class Register {
                 User user =new User();
                 
                 
-		int userId;
+		//int userId;
 		try
 		{
 			String query = "insert into users(username,email,password,contact) values (?,?,?,?)";
@@ -46,6 +46,9 @@ public class Register {
                         System.out.println("Enter Contact:");
 			contact=sc1.nextLine();	
 			user.setContact(contact);
+                        
+                        
+                        //user.setIsLoggedIn(isLoggedIn);
                         
                         ArrayList al = new ArrayList();
                         for(int i=0;i<al.size();i++)

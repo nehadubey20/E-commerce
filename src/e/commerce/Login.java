@@ -22,6 +22,7 @@ public class Login extends User{
         Connection con=DBConnector.getConnection();
 	Scanner sc= new Scanner(System.in);
 	String email,password;
+        boolean isLoggedIn=false;
 
         System.out.println("Enter your E-mail:");
         email=sc.nextLine();
@@ -36,10 +37,14 @@ public class Login extends User{
             String query = "select * from users(email,password)";
             if(isEmailExist(email)==true && isPwdExist(password)==true)
             {
+                isLoggedIn=true;
+                user.setIsLoggedIn(isLoggedIn);
                 return true;
             }
             else
             {
+                isLoggedIn=false;
+                user.setIsLoggedIn(isLoggedIn);
                 return false;
             }
 	}
@@ -68,7 +73,7 @@ public class Login extends User{
 				emailcounter=rs.getString("email");
 				if(emailcounter.equals(email))
 				{
-					System.out.println("email exist!");
+					//System.out.println("email exist!");
 						return email_exist=true;
 				}
                                 
@@ -78,7 +83,7 @@ public class Login extends User{
 		{
 			System.out.println(e);
 		}
-		System.out.println(email_exist);
+		//System.out.println(email_exist);
 		return email_exist;
 	}
         
@@ -100,7 +105,7 @@ public class Login extends User{
 				pwdcounter=rs.getString("password");
 				if(pwdcounter.equals(password))
 				{
-					System.out.println("Entered password exist!");
+				//	System.out.println("Entered password exist!");
 						return pwd_exist=true;
 				}
 			}
@@ -109,7 +114,7 @@ public class Login extends User{
 		{
 			System.out.println(e);
 		}
-		System.out.println(pwd_exist);
+		//System.out.println(pwd_exist);
 		return pwd_exist;
 
 	}

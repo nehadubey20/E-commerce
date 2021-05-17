@@ -16,14 +16,16 @@ public class User {
     private String email;
     private String password;
     private String contact;
+    private boolean isLoggedIn=false;
     
     public User(){
     }
     
-    public User(String email,String password)
+    public User(String email,String password,boolean isLoggedIn)
     {
         this.email=email;
         this.password=password;
+        this.isLoggedIn=isLoggedIn;
     }
     
     public int getUserId() {
@@ -65,5 +67,14 @@ public class User {
     public void setContact(String contact) {
         this.contact = contact;
     }
+
+    public boolean isIsLoggedIn() {
+        return isLoggedIn;
+    }
+
+    public void setIsLoggedIn(boolean isLoggedIn) {
+        this.isLoggedIn = isLoggedIn;
+    }
+    
     
 }

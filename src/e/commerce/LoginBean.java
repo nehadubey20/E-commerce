@@ -10,9 +10,10 @@ package e.commerce;
  * @author NEHA
  */
 public class LoginBean {
+        
         private String email;
 	private String password;
-	
+	private boolean isLoggedin=false;
 	
 	public String getEmail() {
 		return email;
@@ -26,6 +27,15 @@ public class LoginBean {
 	public void setPassword(String password) {
 		this.password = password;
 	} 
+
+    public boolean isIsLoggedin() {
+        return isLoggedin;
+    }
+
+    public void setIsLoggedin(boolean isLoggedin) {
+        this.isLoggedin = isLoggedin;
+    }
+        
 	
 	
     

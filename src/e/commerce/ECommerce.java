@@ -33,7 +33,16 @@ public class ECommerce {
 		choice=sc.nextInt();
 		switch(choice)
 		{
-                	case 1: Login.login(); break;
+                	case 1:  
+                                if(Login.login())
+                                {
+                                    System.out.println("User Login Successfully!");
+                                }
+                                else
+                                {
+                                    System.out.println("Invalid Id or Password");
+                                }
+                                break;
 			case 2: Register.register() ; break;
 			case 3: ; break;
 			case 4: System.exit(0) ;
