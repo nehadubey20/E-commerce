@@ -16,7 +16,7 @@ import java.util.Scanner;
  */
 public class Login extends User{
     
-    public static void login()
+    public static boolean login()
     {
         User user=new User();
         Connection con=DBConnector.getConnection();
@@ -25,28 +25,34 @@ public class Login extends User{
 
         System.out.println("Enter your E-mail:");
         email=sc.nextLine();
+        user.setEmail(email);
         
         System.out.println("Enter your password:");
         password=sc.nextLine();
+        user.setPassword(password);
         
 	try
         {
             String query = "select * from users(email,password)";
             if(isEmailExist(email)==true && isPwdExist(password)==true)
             {
-  		System.out.println("User Login Successfully");
+                return true;
             }
             else
             {
-                System.out.println("Email/Password does not exist!!");
+                return false;
             }
 	}
-		catch(Exception e)
-		{
-			System.out.println(e);
-		}
+	catch(Exception e)
+	{
+            System.out.println(e);
 	}
-	public static boolean isEmailExist(String email)
+        return false;
+}
+	
+    
+    
+    public static boolean isEmailExist(String email)
 	{
 		boolean email_exist=false;
 		Connection con=DBConnector.getConnection();
