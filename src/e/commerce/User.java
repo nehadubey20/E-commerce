@@ -76,5 +76,12 @@ public class User {
         this.isLoggedIn = isLoggedIn;
     }
     
-    
+    public boolean login(){
+        return true;
+    }
+    public boolean register(){
+        return true;
+        
+        
+    }
 }

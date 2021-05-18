@@ -22,7 +22,7 @@ public class Register {
 		Connection con=DBConnector.getConnection();
 		Scanner sc1= new Scanner(System.in);
 		String username,email,password,contact;
-                
+                //boolean isLoggedIn;
                 //Creating object of user
                 User user =new User();
                 

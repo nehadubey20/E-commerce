@@ -20,6 +20,7 @@ public class ECommerce {
        // int browse;
 	int choice;
         Login login = new Login();
+        User usr = new User();
         Scanner sc=new Scanner(System.in);
 	System.out.println("....Welcome to MART....");
 				
@@ -34,9 +35,11 @@ public class ECommerce {
 		switch(choice)
 		{
                 	case 1:  
+                                usr.login();
                                 if(Login.login())
                                 {
                                     System.out.println("User Login Successfully!");
+                                    boolean isLoggedIn=true;
                                     
                                     while(true)
                                     {
@@ -52,7 +55,7 @@ public class ECommerce {
                                     
                                     switch(ch2)
                                     {
-                                        case 1:Browse.browse();break;
+                                        case 1:new Browse().browse(usr);break;
                                         case 2:;break;
                                         case 3:;break;
                                         case 4:;break;
@@ -68,8 +71,8 @@ public class ECommerce {
                                     System.out.println("Invalid Id or Password");
                                 }
                                 break;
-			case 2: Register.register() ; break;
-			case 3: Browse.browse(); break;
+			case 2:usr.register(); Register.register() ; break;
+			case 3: ; break;
 			case 4: System.exit(0) ;
 			default: System.out.println("Enter a valid choice!");		
 		}

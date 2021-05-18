@@ -12,9 +12,10 @@ import java.util.Scanner;
  * @author NEHA
  */
 public class Browse {
+    User usr;
     
-    public static void browse()
-    {
+    public  void browse(User usr)
+    {   this.usr = usr;
         Scanner sc=new Scanner(System.in);
 	System.out.println("....Select Categories....");
 				

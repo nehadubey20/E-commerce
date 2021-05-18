@@ -14,7 +14,7 @@ import java.util.Scanner;
  *
  * @author NEHA
  */
-public class Login extends User{
+public class Login{
     
     public static boolean login()
     {
