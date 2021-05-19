@@ -53,8 +53,7 @@ public class Login{
             System.out.println(e);
 	}
         return false;
-}
-	
+}	
     
     
     public static boolean isEmailExist(String email)
@@ -114,7 +113,6 @@ public class Login{
 		{
 			System.out.println(e);
 		}
-		//System.out.println(pwd_exist);
 		return pwd_exist;
 
 	}

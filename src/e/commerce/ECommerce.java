@@ -55,7 +55,7 @@ public class ECommerce {
                                     
                                     switch(ch2)
                                     {
-                                        case 1:new Browse().browse(usr);break;
+                                        case 1: Browse.browse();break;
                                         case 2:;break;
                                         case 3:;break;
                                         case 4:;break;

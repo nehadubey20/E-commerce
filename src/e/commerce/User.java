@@ -16,6 +16,7 @@ public class User {
     private String email;
     private String password;
     private String contact;
+    private String address;
     private boolean isLoggedIn=false;
     
     public User(){
@@ -75,6 +76,15 @@ public class User {
     public void setIsLoggedIn(boolean isLoggedIn) {
         this.isLoggedIn = isLoggedIn;
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
     
     public boolean login(){
         return true;
