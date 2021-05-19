@@ -10,7 +10,7 @@ package e.commerce;
  * @author ITI
  */
 public class AddToCart {
-    public static void main(String[] args) {
+    public void sayHy(){
         System.out.println("hyy");
     }
 }
