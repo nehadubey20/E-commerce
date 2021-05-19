@@ -55,7 +55,7 @@ public class ECommerce {
                                     
                                     switch(ch2)
                                     {
-                                        case 1:new Browse().browse(usr);break;
+                                        case 1: Browse.browse();break;
                                         case 2:;break;
                                         case 3:;break;
                                         case 4:;break;
@@ -72,7 +72,7 @@ public class ECommerce {
                                 }
                                 break;
 			case 2:usr.register(); Register.register() ; break;
-			case 3: ; break;
+			case 3:Browse.browse() ; break;
 			case 4: System.exit(0) ;
 			default: System.out.println("Enter a valid choice!");		
 		}
