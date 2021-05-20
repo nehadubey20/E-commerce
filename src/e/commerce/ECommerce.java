@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author NEHA
  */
-public class ECommerce {
+public class ECommerce extends Browse{
 
     /**
      * @param args the command line arguments
@@ -19,6 +19,8 @@ public class ECommerce {
     public static void main(String[] args) {
        // int browse;
 	int choice;
+        AddToCart atc = new AddToCart();
+        Browse br = new Browse();
         Login login = new Login();
         User usr = new User();
         Scanner sc=new Scanner(System.in);
@@ -29,6 +31,7 @@ public class ECommerce {
         	System.out.println("1. Login");
 		System.out.println("2. New user?? Register");
 		System.out.println("3. Browse");
+                System.out.println("5.Cart");
 		System.out.println("4. Quit");
 		
 		choice=sc.nextInt();
@@ -55,7 +58,7 @@ public class ECommerce {
                                     
                                     switch(ch2)
                                     {
-                                        case 1: Browse.browse();break;
+                                        case 1: br.browse();break;
                                         case 2:;break;
                                         case 3:;break;
                                         case 4:;break;
@@ -72,8 +75,22 @@ public class ECommerce {
                                 }
                                 break;
 			case 2:usr.register(); Register.register() ; break;
-			case 3:Browse.browse() ; break;
+			case 3:br.browse() ; break;
 			case 4: System.exit(0) ;
+                        case 5:
+                            /*System.out.println("1.Show Products\n2.Display Total");
+                            int ch9;
+                            ch9=sc.nextInt();
+                            switch(ch9)
+                            {
+                                case 1:
+                                     br.show();
+                                    break;
+                                case 2:
+                                    br.Total();
+                            }*/
+                            break;
+                           
 			default: System.out.println("Enter a valid choice!");		
 		}
 						
