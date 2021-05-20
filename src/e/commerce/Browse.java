@@ -14,8 +14,12 @@ import java.util.Scanner;
 public class Browse {
     //User usr;
     
-    public static void browse()
-    {   //this.usr = usr;
+    public static void browse(){
+//<<<<<<< HEAD
+//    {   //this.usr = usr;
+//=======
+//    {  
+//>>>>>>> origin/main
         Scanner sc=new Scanner(System.in);
 	System.out.println("....Select Categories....");
 				
@@ -48,5 +52,6 @@ public class Browse {
 		}
 
     }
-    
 }
+    
+

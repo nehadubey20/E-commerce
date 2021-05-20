@@ -5,23 +5,12 @@
  */
 package e.commerce;
 
-import java.util.Scanner;
-
 /**
  *
- * @author NEHA
+ * @author ITI
  */
-public class ECommerce {
-
-    /**
-     * @param args the command line arguments
-     */
+public class AddToCart {
     public static void main(String[] args) {
-       // int browse;
-	ShowingOptions sw = new ShowingOptions();
-        sw.showOption();
-        
-
+        System.out.println("hyy");
     }
-    
 }
