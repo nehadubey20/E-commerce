@@ -17,13 +17,20 @@ public class UserAccount {
     User usr1=new User();
     Connection con=DBConnector.getConnection();
     Scanner sc=new Scanner(System.in);
-    public void viewProfile()
+    public void viewProfile(User usr)
     {
-        usr1.getUserId();
-        usr1.getUsername();
-        usr1.getEmail();
-        usr1.getContact();
-        usr1.getAddress();
+        
+        usr.getUsername();
+        usr.getEmail();
+        usr.getContact();
+        usr.getAddress();
+        System.out.println("User Id: "+usr.getUserId());
+        System.out.println("User Username: "+usr.getUsername());
+        System.out.println("User Email: "+usr.getEmail());
+        System.out.println("User Contact: "+usr.getContact());
+        
+        
+        
     }
 
     public void editProfile()
