@@ -7,63 +7,72 @@ package e.commerce;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  *
- * @author NEHA
+ * @author Tahniya
  */
 public class UserAccount {
     User usr1=new User();
     Connection con=DBConnector.getConnection();
     Scanner sc=new Scanner(System.in);
-    public void viewProfile(User usr)
+    public void viewProfile()
     {
-        
-        usr.getUsername();
-        usr.getEmail();
-        usr.getContact();
-        usr.getAddress();
-        System.out.println("User Id: "+usr.getUserId());
-        System.out.println("User Username: "+usr.getUsername());
-        System.out.println("User Email: "+usr.getEmail());
-        System.out.println("User Contact: "+usr.getContact());
-        
-        
-        
-    }
-
+        System.out.println(usr1.getUserId());
+        System.out.println(usr1.getUsername());
+        System.out.println(usr1.getEmail());
+        System.out.println(usr1.getContact());
+        System.out.println(usr1.getAddress());
+     }
+    
     public void editProfile()
     {
-        String pass, pass1;
-        try
+        System.out.println("Choose Option: \n1. Update Name \n2. Update Password \n3. Update Email ID \n4. Update Contact Number \n5. Update Address");
+        int opt;
+        String uName = null, emailID = null, contactNo = null,userAddress = null;
+        String pass, pass1 = null;
+        opt=sc.nextInt();
+        switch(opt)
         {
-            String query = "insert into users(username,email,password,contact,address) values (?,?,?,?,?)";
-            System.out.println("Enter New Username:");
-            String uName=sc.nextLine();
-            do{
+            case 1:
+                System.out.println("Enter New Username:");
+                uName=sc.nextLine();
+            
+            case 2:
+                do{
                 System.out.println("Enter New Password:");
                 pass=sc.nextLine();
                 System.out.println("Confirm Password:");
                 pass1=sc.nextLine();
                 if(pass.equals(pass1))
                 {
-                   System.out.println("Passwords don't match");
+                   System.out.println("Passwords don't match"); 
                 }
             }while(pass.equals(pass1)==false);
-
-            System.out.println("Enter New EmailID:");
-            String emailID=sc.nextLine();
-            System.out.println("Enter New Contact Number:");
-            String contactNo=sc.nextLine();
-            System.out.println("Enter New Address:");
-            String userAddress=sc.nextLine();
+                
+            case 3:
+                System.out.println("Enter New EmailID:");
+                emailID=sc.nextLine();
+                
+            case 4:
+                System.out.println("Enter New Contact Number:");
+                contactNo=sc.nextLine();
+                
+            case 5:
+                System.out.println("Enter New Address:");
+                userAddress=sc.nextLine();
+        } 
+        try
+        {
+            String query = "update users set userName='"+uName+"',e-mail='"+emailID+"',password='"+pass1+"',contact='"+contactNo+"',address='"+userAddress+
+                    "' where user_id='"+usr1.getUserId()+"'";
             usr1.setUsername(uName);
             usr1.setPassword(pass1);
             usr1.setEmail(emailID);
             usr1.setContact(contactNo);
             usr1.setAddress(userAddress);
-
+            
             PreparedStatement acc = con.prepareStatement(query);
 			acc.setString(1,uName);
 			acc.setString(2,emailID);
@@ -75,8 +84,9 @@ public class UserAccount {
         }
         catch(Exception e)
         {
-            System.out.println("Exception: "+e);
+            System.out.println("Error: "+e);
         }
+    } 
+    
+    }  
 
-}
-}

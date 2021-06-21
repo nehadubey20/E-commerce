@@ -26,7 +26,6 @@ public class Register {
                 //Creating object of user
                 User user =new User();
                 
-                
 		//int userId;
 		try
 		{
@@ -57,6 +56,7 @@ public class Register {
                         for(int i=0;i<al.size();i++)
                         {
                             al.add(user);
+                            System.out.println(user);
                         }
 //			if(isEmailExist(email)==false && isPhoneExist(phone)==false)
 //			{			

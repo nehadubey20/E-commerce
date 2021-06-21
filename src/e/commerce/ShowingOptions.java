@@ -21,6 +21,7 @@ public class ShowingOptions {
         Browse br = new Browse();
         Login login = new Login();
         User usr = new User();
+        UserAccount uac = new UserAccount();
         
         
         Scanner sc=new Scanner(System.in);
@@ -49,9 +50,10 @@ public class ShowingOptions {
                                         System.out.println("01. Browse");
                                         System.out.println("02. Add to Cart");
                                         System.out.println("03. User Details");
-                                        System.out.println("04. View Cart");
-                                        System.out.println("05. Checkout");
-                                        System.out.println("06. Exit");
+                                        System.out.println("04. Edit User Details");
+                                        System.out.println("05. View Cart");
+                                        System.out.println("06. Checkout");
+                                        System.out.println("07. Exit");
                                         System.out.println("Enter your choice:");
                                         int ch2=sc.nextInt();
                                     
@@ -69,8 +71,8 @@ public class ShowingOptions {
                                         
                                         
                                         case 2:;break;
-                                        case 3:;break;
-                                        case 4:;break;
+                                        case 3:uac.viewProfile();break;
+                                        case 4:uac.editProfile();break;
                                         case 5:;break;
                                         case 6: System.exit(0) ;
                                         default: System.out.println("Enter a valid choice!");	
