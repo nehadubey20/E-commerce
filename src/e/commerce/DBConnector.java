@@ -26,7 +26,9 @@ public class DBConnector {
             try
             {
         	Class.forName("com.mysql.jdbc.Driver");
-		conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce","root","");
+//                jdbc:mysql://localhost:3306/Peoples?autoReconnect=true&useSSL=false
+
+		conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/e-commerce?autoReconnect=true&useSSL=false","root","root");
 		System.out.println(conn);
                 //conn.close();
             }
@@ -39,8 +41,8 @@ public class DBConnector {
 	}
 //        public static void main(String[] args) {
 //	Connection con=DBConnector.getConnection();
-//
-//    }
+
+    
 }
 
 

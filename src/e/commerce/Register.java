@@ -21,7 +21,7 @@ public class Register {
 	{
 		Connection con=DBConnector.getConnection();
 		Scanner sc1= new Scanner(System.in);
-		String username,email,password,contact;
+		String username,email,password,contact,address;
                 //boolean isLoggedIn;
                 //Creating object of user
                 User user =new User();
@@ -30,7 +30,7 @@ public class Register {
 		//int userId;
 		try
 		{
-			String query = "insert into users(username,email,password,contact) values (?,?,?,?)";
+			String query = "insert into users(username,email,password,contact,address) values (?,?,?,?,?)";
 			System.out.println("Enter User Name:");
 			username=sc1.nextLine();
                         user.setUsername(username);
@@ -47,6 +47,9 @@ public class Register {
 			contact=sc1.nextLine();	
 			user.setContact(contact);
                         
+                        System.out.println("Enter Address:");
+			address=sc1.nextLine();	
+			user.setAddress(address);
                         
                         //user.setIsLoggedIn(isLoggedIn);
                         
@@ -63,6 +66,7 @@ public class Register {
 			stmt.setString(2,email);
 			stmt.setString(3,password);
 			stmt.setString(4,contact);
+                        stmt.setString(5,address);
 			stmt.executeUpdate();
 			System.out.println("User Registered Successfully");
 			//}
