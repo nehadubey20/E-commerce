@@ -41,7 +41,7 @@ public class Browse extends AddToCart {
         {
             System.out.println(rs.getString(1)+"  Name:  "+ rs.getString(2)+
                     "            Price: Rs."+rs.getString(3)+
-                    "            Details:"+rs.getString(4));
+                    "                       Details:"+rs.getString(4));
         }
         
         con.close();

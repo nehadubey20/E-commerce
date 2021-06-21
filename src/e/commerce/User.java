@@ -101,5 +101,38 @@ public class User {
     }
     
     
+    public void getUserDetail()
+    {
+        try
+        {
+            Connection con = DBConnector.getConnection();
+            Statement st = con.createStatement();
+            String query = "Select user_id,userName,email,contact,address from users";
+            ResultSet rs = st.executeQuery(query);
+            while(rs.next())
+            {
+                userId = rs.getInt(1);
+                username=rs.getString(2);
+                email=rs.getString(3);
+                contact=rs.getString(4);
+                address=rs.getString(5);
+                System.out.println(userId+""+ username);
+                
+            
+            }
+            
+            
+
+        }
+        catch(Exception e)
+        {
+            System.out.println("Error: "+e);
+        }
+    }
+
+    int setUserId() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
 }

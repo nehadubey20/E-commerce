@@ -25,7 +25,7 @@ public class Register {
                 //boolean isLoggedIn;
                 //Creating object of user
                 User user =new User();
-                
+//                ArrayList<User> alu = new ArrayList<User>();
 		//int userId;
 		try
 		{
@@ -56,7 +56,7 @@ public class Register {
                         for(int i=0;i<al.size();i++)
                         {
                             al.add(user);
-                            System.out.println(user);
+                            System.out.println("Userdata :"+al);
                         }
 //			if(isEmailExist(email)==false && isPhoneExist(phone)==false)
 //			{			
@@ -78,5 +78,5 @@ public class Register {
 			System.out.println(e);
 		}
 	}
-
+    
 }
