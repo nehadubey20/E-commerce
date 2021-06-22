@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class Browse extends AddToCart {
+public class Browse {
     User usr;
    
     public void browse() throws SQLException

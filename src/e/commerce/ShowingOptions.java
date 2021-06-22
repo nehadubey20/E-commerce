@@ -25,7 +25,7 @@ public class ShowingOptions {
         
         
         Scanner sc=new Scanner(System.in);
-	System.out.println("....Welcome to MART....");
+	System.out.println("-----------Welcome to E-CART----------");
 				
 	while(true)
 	{
