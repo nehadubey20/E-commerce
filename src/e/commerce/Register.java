@@ -70,6 +70,14 @@ public class Register {
 			stmt.executeUpdate();
 			System.out.println("User Registered Successfully");
 			//}
+                        
+                        
+                        if(stmt.executeUpdate()>0)
+                        {
+                            String cre="Create table "+username+"(user_id int,productId int,ProductName varchar(255),productPrice double,Quantity int,Total double)";
+                            stmt.execute(cre);
+                            System.out.println(username+" table created successfully!");
+                        }
 
 			//con.close();
 		}
