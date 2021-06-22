@@ -74,7 +74,8 @@ public class ShowingOptions {
                                         case 3:uac.viewProfile();break;
                                         case 4:uac.editProfile();break;
                                         case 5:;break;
-                                        case 6: System.exit(0) ;
+                                        case 6: ;break;
+                                        case 7: System.exit(0) ;
                                         default: System.out.println("Enter a valid choice!");	
                                         
                                     }

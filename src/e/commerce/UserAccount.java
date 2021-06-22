@@ -44,7 +44,7 @@ public class UserAccount {
         String uName = "", emailID = "", contactNo = "", userAddress = "";
         String pass, pass1 = "";
         opt = sc.nextInt();
-        sc.reset();
+        //sc.reset();
         
         if (opt == 1) 
         {

@@ -22,7 +22,8 @@ public class Browse {
         ResultSet rs = st.executeQuery(query);
         while(rs.next())
         {
-            System.out.println(rs.getString(1)+" "+rs.getString(2));
+           
+           System.out.println(rs.getString(1)+" "+rs.getString(2));
         }
         
      }
@@ -37,11 +38,15 @@ public class Browse {
                     "from products p,categories c\n" +
                     "where p.categoryId=c.categoryId and c.S_No='"+pro+"' ";
         ResultSet rs = st.executeQuery(query);
+        System.out.format("%-10s%-30s%-25s%-50s\n", "S_No.", "Name","Price","Details");
         while(rs.next())
         {
-            System.out.println(rs.getString(1)+"  Name:  "+ rs.getString(2)+
-                    "            Price: Rs."+rs.getString(3)+
-                    "                       Details:"+rs.getString(4));
+            System.out.println("----------------------------------------------------------------------------------------------------------");
+             System.out.format("%-10s%-30s%-25s%-50s\n", rs.getString(1), rs.getString(2),rs.getString(3),rs.getString(4));
+//            System.out.println(rs.getString(1)+"  Name:  "+ rs.getString(2)+
+//                    "            Price: Rs."+rs.getString(3)+
+//                    "                       Details:"+rs.getString(4));
+            System.out.println("----------------------------------------------------------------------------------------------------------");
         }
         
         con.close();
