@@ -59,7 +59,7 @@ public class UserAccount {
             Statement acc = con.createStatement();
             acc.executeUpdate(query);
             
-            System.out.println("Profile edited successfully!");
+            System.out.println("Username edited successfully!");
             } 
             catch (Exception e) 
             {
@@ -88,7 +88,7 @@ public class UserAccount {
             Statement acc = con.createStatement();
             acc.executeUpdate(query);
             
-            System.out.println("Profile edited successfully!");
+            System.out.println("Password edited successfully!");
             } 
             catch (Exception e) 
             {
@@ -109,7 +109,7 @@ public class UserAccount {
             Statement acc = con.createStatement();
             acc.executeUpdate(query);
             
-            System.out.println("Profile edited successfully!");
+            System.out.println("E-mail edited successfully!");
             } 
             catch (Exception e) 
             {
@@ -130,7 +130,7 @@ public class UserAccount {
             Statement acc = con.createStatement();
             acc.executeUpdate(query);
             
-            System.out.println("Profile edited successfully!");
+            System.out.println("contact edited successfully!");
             } 
             catch (Exception e) 
             {
@@ -151,7 +151,7 @@ public class UserAccount {
             Statement acc = con.createStatement();
             acc.executeUpdate(query);
             
-            System.out.println("Profile edited successfully!");
+            System.out.println("Address edited successfully!");
         } 
         catch (Exception e) 
         {
