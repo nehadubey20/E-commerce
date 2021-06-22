@@ -54,6 +54,7 @@ public class ShowingOptions {
                                         System.out.println("05. View Cart");
                                         System.out.println("06. Checkout");
                                         System.out.println("07. Exit");
+                                        
                                         System.out.println("Enter your choice:");
                                         int ch2=sc.nextInt();
                                     
