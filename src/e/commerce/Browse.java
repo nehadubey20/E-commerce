@@ -1,57 +1,55 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package e.commerce;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
-/**
- *
- * @author NEHA
- */
-public class Browse {
-    //User usr;
+public class Browse extends AddToCart {
+    User usr;
+   
+    public void browse() throws SQLException
+    {
+        
+        Scanner sc =new Scanner(System.in);
+        Connection con=DBConnector.getConnection();
+        
+        Statement st = con.createStatement();
+        String query = "Select s_no,categoryname from categories";
+        ResultSet rs = st.executeQuery(query);
+        while(rs.next())
+        {
+            System.out.println(rs.getString(1)+" "+rs.getString(2));
+        }
+        
+     }
     
-    public static void browse(){
-//<<<<<<< HEAD
-//    {   //this.usr = usr;
-//=======
-//    {  
-//>>>>>>> origin/main
-        Scanner sc=new Scanner(System.in);
-	System.out.println("....Select Categories....");
-				
-	while(true)
-	{
-        	System.out.println("1. Mobiles");
-		System.out.println("2. Laptop");
-		System.out.println("3. PC");
-		System.out.println("4. Accessories");
-                System.out.println("5. Smart Watch");
-		System.out.println("6. Tablet");
-		System.out.println("7. Cameras");
-		System.out.println("8. Exit");
-		
-		System.out.println("Enter your choice:");
-		int choice=sc.nextInt();
-		switch(choice)
-		{
-                	case 1: ; break;
-			case 2:  ; break;
-			case 3: ; break;
-                        case 4: ; break;
-                        case 5: ; break;
-                        case 6: ; break;
-                        case 7:;break;
-			case 8: System.exit(0) ;
-			default: System.out.println("Enter a valid choice!");		
-		}
-						
-		}
-
+    public void browseProducts(int pro) throws SQLException
+    {
+        Scanner sc =new Scanner(System.in);
+        Connection con=DBConnector.getConnection();
+        
+        Statement st = con.createStatement();
+        String query = "Select p.S_No,p.productName,p.productPrice,p.productDetails \n" +
+                    "from products p,categories c\n" +
+                    "where p.categoryId=c.categoryId and c.S_No='"+pro+"' ";
+        ResultSet rs = st.executeQuery(query);
+        while(rs.next())
+        {
+            System.out.println(rs.getString(1)+"  Name:  "+ rs.getString(2)+
+                    "            Price: Rs."+rs.getString(3)+
+                    "                       Details:"+rs.getString(4));
+        }
+        
+        con.close();
+    
+    
     }
-}
-    
+        
+    }
+
+
 
