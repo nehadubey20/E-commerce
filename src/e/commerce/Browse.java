@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class Browse {
     User usr;
+    AddToCart atc = new AddToCart();
    
     public void browse() throws SQLException
     {
@@ -22,8 +23,7 @@ public class Browse {
         ResultSet rs = st.executeQuery(query);
         while(rs.next())
         {
-           
-           System.out.println(rs.getString(1)+" "+rs.getString(2));
+            System.out.println(rs.getString(1)+" "+rs.getString(2));
         }
         
      }
@@ -34,27 +34,33 @@ public class Browse {
         Connection con=DBConnector.getConnection();
         
         Statement st = con.createStatement();
-        String query = "Select p.S_No,p.productName,p.productPrice,p.productDetails \n" +
+        String query = "Select p.S_No,p.productId,p.productName,p.productPrice,p.productDetails \n" +
                     "from products p,categories c\n" +
                     "where p.categoryId=c.categoryId and c.S_No='"+pro+"' ";
         ResultSet rs = st.executeQuery(query);
-        System.out.format("%-10s%-30s%-25s%-50s\n", "S_No.", "Name","Price","Details");
         while(rs.next())
         {
-            System.out.println("----------------------------------------------------------------------------------------------------------");
-             System.out.format("%-10s%-30s%-25s%-50s\n", rs.getString(1), rs.getString(2),rs.getString(3),rs.getString(4));
-//            System.out.println(rs.getString(1)+"  Name:  "+ rs.getString(2)+
-//                    "            Price: Rs."+rs.getString(3)+
-//                    "                       Details:"+rs.getString(4));
-            System.out.println("----------------------------------------------------------------------------------------------------------");
+            System.out.println(rs.getString(1)+"    ProductId    "+rs.getString(2)+"  Name:  "+ rs.getString(3)+
+                    "            Price: Rs."+rs.getString(4)+
+                    "                       Details:"+rs.getString(5));
         }
-        
-        
-    
-    
-    }
-        
-    }
+        System.out.println("1.Add To Cart\n2.Main Menu");
+        int ch;
+        ch=sc.nextInt();
+        if(ch==1)
+        {
+            atc.AddInCart();
+        }
+        else
+        {
 
+        }
+
+        //con.close();
+    
+    
+    }
+        
+    }
 
 

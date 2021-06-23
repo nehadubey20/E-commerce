@@ -26,11 +26,9 @@ public class DBConnector {
             try
             {
         	Class.forName("com.mysql.jdbc.Driver");
-//                jdbc:mysql://localhost:3306/Peoples?autoReconnect=true&useSSL=false
 
 		conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/e-commerce?autoReconnect=true&useSSL=false","root","root");
 		System.out.println(conn);
-                //conn.close();
             }
             catch(Exception e)
             {

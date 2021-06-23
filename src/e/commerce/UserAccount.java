@@ -153,13 +153,24 @@ public class UserAccount {
             
             System.out.println("Address edited successfully!");
         } 
+            
+            
         catch (Exception e) 
         {
             System.out.println("Error: here" + e);
         }
             
+            
         }
-
+        else if(opt==6)
+        {
+            System.out.println("Checked out Successfully");
+            System.exit(0);
+        }
+        else
+        {
+            System.exit(0);
+        }
 //        try {
 //            String query = "update users set userName='" + uName + "',email='" + emailID
 //                    + "',password='" + pass1 + "',contact='" + contactNo + "',address='" + userAddress

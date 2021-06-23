@@ -17,6 +17,8 @@ import java.util.Scanner;
  */
 public class Register {
     
+        //public static String useremail;
+
     public static void register()
 	{
 		Connection con=DBConnector.getConnection();

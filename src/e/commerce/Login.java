@@ -17,6 +17,8 @@ import java.util.Scanner;
  */
 public class Login {
 
+        //public static String useremail;
+
     public static boolean login() {
         User user = new User();
         Connection con = DBConnector.getConnection();
